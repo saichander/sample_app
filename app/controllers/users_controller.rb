@@ -20,8 +20,12 @@ class UsersController < ApplicationController
   end
 
   def show
+<<<<<<< HEAD
     #render 'show' if current_user?(@user)
     @microposts = @user.microposts.paginate(page: params[:page])
+=======
+    render 'show' if current_user?(@user)
+>>>>>>> 0a866ef32698e733026b03715caa58656b73e24b
   end
 
   def new
@@ -67,6 +71,15 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
+<<<<<<< HEAD
+=======
+
+  def set_user
+    @user=User.find(params[:id])
+  end
+  #Before filters
+  #confirms a logged in user
+>>>>>>> 0a866ef32698e733026b03715caa58656b73e24b
 
   def set_user
     @user=User.find(params[:id])
